@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,20 +18,21 @@ class _HomePageState extends State<HomePage> {
         return SizedBox(
             child: ListView(
           children: [
-            Container(
+            SizedBox(
               width: w,
               height: h,
               child: Stack(
                 children: [
                   Positioned.fill(
                     child: Image.network(
-                      "https://dvyvvujm9h0uq.cloudfront.net/com/articles/1543483387-reinhart-julian-1145947-unsplash.jpg",
+                      "https://images.unsplash.com/photo-1556103255-4443dbae8e5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGhvdG9ncmFwaGVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+                      // https://dvyvvujm9h0uq.cloudfront.net/com/articles/1543483387-reinhart-julian-1145947-unsplash.jpg
                       fit: BoxFit.cover,
                     ),
                   ),
                   Positioned.fill(
                     child: Container(
-                      color: Colors.black.withOpacity(.6),
+                      color: Colors.black.withOpacity(.7),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +41,6 @@ class _HomePageState extends State<HomePage> {
                               "WELCOME TO",
                               style: TextStyle(
                                 color: Colors.white,
-                                // fontFamily: "Schyler",
-                                // fontWeight: FontWeight.w600,
-                                // fontWeight: FontWeight.bold,
                                 fontSize: w * (w <= 800 ? .03 : .015),
                                 height: 1,
                               ),
@@ -54,7 +50,6 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: "Schyler",
-                                // fontWeight: FontWeight.w600,
                                 fontSize: w * .15,
                                 height: 1,
                               ),

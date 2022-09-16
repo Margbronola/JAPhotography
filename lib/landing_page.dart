@@ -39,6 +39,7 @@ class _LandingPageState extends State<LandingPage>
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: SizedBox(
         width: size.width,
@@ -67,7 +68,10 @@ class _LandingPageState extends State<LandingPage>
                       : size.width > 800
                           ? size.width * .55
                           : size.width,
-                  child: Align(
+                  child: AnimatedAlign(
+                    duration: const Duration(
+                      milliseconds: 700,
+                    ),
                     alignment: size.width <= 800
                         ? Alignment.center
                         : Alignment.centerLeft,
@@ -77,13 +81,13 @@ class _LandingPageState extends State<LandingPage>
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
+                          fontSize: 18,
                         ),
                         children: [
                           TextSpan(
                             text: 'ACABO',
                             style: TextStyle(
                               color: Colors.amber,
-                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],

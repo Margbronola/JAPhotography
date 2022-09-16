@@ -12,15 +12,37 @@ class ProjectPage extends StatefulWidget {
 class _ProjectPageState extends State<ProjectPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.black,
-        alignment: Alignment.center,
-        child: Text(
-          "Project",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+    final Size size = MediaQuery.of(context).size;
+
+    return LayoutBuilder(
+      builder: (_, c) {
+        final double w = c.maxWidth;
+        final double h = c.maxHeight;
+        return Container(
+          color: Colors.black87,
+          alignment: Alignment.center,
+          child: ListView(
+            children: [
+              Container(
+                width: w,
+                height: h * .7,
+                color: Colors.grey.shade800,
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: w * .55,
+                  height: h * .47,
+                  color: Colors.white,
+                ),
+              ),
+              Container(
+                width: w,
+                height: h * .8,
+                color: Colors.grey.shade300,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
